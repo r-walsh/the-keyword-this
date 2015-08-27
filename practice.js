@@ -6,8 +6,8 @@
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Explicit: setting what the keyword is bound to manually via .call(), .bind(), and .apply().
-      //Implicit: 
-      //Default: 
+      //Implicit: Implicit is the value assigned to "this" when attached to an object, referring to the object.
+      //Default: Default is the initial value of "this", referring to the Window.
       //new: new is used in the creation of new objects, particularly in constructor functions. By calling 
       //new Constructor(); the "this" keyword inside the constructor is bound to the object being created.
 
@@ -105,10 +105,10 @@ setTimeout(getUsername.bind(user), 5000);
 //Above you're given an object, a function, and a setTimeout invocation. After 5 seconds, what will the 
 //getUsername function return?
 
-  //window.username
+  //Window.username
 
 //In the example above, what is the 'this keyword' bound to when getUsername runs?
 
-  //The window
+  //The Window
 
 //Fix the setTimeout invocation so that the user object will be the focal object when getUsername is ran.
