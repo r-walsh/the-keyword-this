@@ -5,7 +5,11 @@
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
-      //
+      //Explicit: setting what the keyword is bound to manually via .call(), .bind(), and .apply().
+      //Implicit: 
+      //Default: 
+      //new: new is used in the creation of new objects, particularly in constructor functions. By calling 
+      //new Constructor(); the "this" keyword inside the constructor is bound to the object being created.
 
   // 3) What is the difference between call and apply?
 
@@ -60,7 +64,9 @@ var mustang = new Car('Ford', 'Mustang', 2013);
 prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
 mustang.moveCar(); //increments prius' move property by 10. Returns the new move property.
 
-//Hint, you'll need to write a moveCar function which is added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the write object (prius vs mustang).
+//Hint, you'll need to write a moveCar function which is added to every object that is being returned from the 
+//Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking 
+//  moveCar on the write object (prius vs mustang).
 
 
 
