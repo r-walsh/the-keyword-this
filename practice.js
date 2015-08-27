@@ -1,19 +1,20 @@
 //We're in a job interview. Answer the following questions (try to not look at your notes unless you have to).
   // 1) What is the purpose of the 'this keyword'?
 
-      //Answer
+      //To target the calling object, allowing the same method to be used on multiple objects.
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
-      //Answer
+      //
 
   // 3) What is the difference between call and apply?
 
-      //Answer
+      //Both call and apply set the "this" value as the first argument, but call passes additional arguments
+      //individually, while apply passes an array.
 
   // 4) What does .bind do?
 
-      //Answer
+      //.bind explicitly ties the 'this keyword' to a specified object.
 
 
 //Next Problem
@@ -21,12 +22,20 @@
 //Create an object called user which has the following properties.
   //username --> which is a string
   //email --> which is a string
-  //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
+  //getUsername --> which is a function that returns the current object's username property. *Don't use 
+  //'user' instead use the 'this' keyword*
 
     //Code Here
+  var user = {
+    username: "usr",
+    email: "usr@usrmail.com",
+    getUsername: function() {
+      return this.username;
+    }
+  }
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
-
+user.getUsername();
 
 //Next Problem
 
@@ -34,9 +43,19 @@
 // Write the function definitions which will make the following function invocations function properly.
 
   //Function Invocations Here
+function Car(make, model, year) {
+  this.make = make,
+  this.model = model,
+  this.year = year,
+  this.move = 0,
+  this.moveCar = function() {
+    this.move += 10;
+    return this.move;
+  }
+}
 
-var prius = Car('Toyota', 'Prius', 2011);
-var mustang = Car('Ford', 'Mustang', 2013);
+var prius = new Car('Toyota', 'Prius', 2011);
+var mustang = new Car('Ford', 'Mustang', 2013);
 
 prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
 mustang.moveCar(); //increments prius' move property by 10. Returns the new move property.
